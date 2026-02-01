@@ -1,0 +1,349 @@
+/* Custom Styles for Portfolio Website - Light Mode Glassmorphism */
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Pastel Gradient Background */
+body {
+  background: linear-gradient(135deg,
+    #d4f0e7 0%,
+    #e4f3fc 30%,
+    #ede4f7 60%,
+    #f9e4ed 100%
+  );
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Glassmorphism Main Container */
+.glass-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Typography */
+.hero-title {
+  color: #1f2937;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section-title {
+  color: #1f2937;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Navigation Styles */
+.nav-link {
+  color: #9ca3af;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+  padding-bottom: 6px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #1f2937;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #1f2937;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Primary Button (Blue) */
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: scale(1.02);
+}
+
+/* Text Link (Blue) */
+.btn-link {
+  color: #2563eb;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+  color: #1d4ed8;
+}
+
+/* Brand Logo */
+.brand-logo {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Tech Tags */
+.tech-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+/* Image Placeholders */
+.image-placeholder-circle {
+  width: 280px;
+  height: 280px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.image-placeholder-rounded {
+  width: 320px;
+  height: 380px;
+  background: #e5e7eb;
+  border-radius: 24px;
+  flex-shrink: 0;
+}
+
+.image-placeholder-box {
+  background: #f3f4f6;
+  border-radius: 16px;
+  aspect-ratio: 16/9;
+}
+
+/* Glass Section Cards */
+.glass-section {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  padding: clamp(20px, 4vw, 40px);
+  margin: 0;
+}
+
+/* Skill Cards */
+.skill-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Project Cards */
+.project-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #d1d5db;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Contact Cards */
+.contact-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+.contact-card:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* About Card */
+.about-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+/* Fade In Animation (for elements not using GSAP) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GSAP controlled elements - set initial state for scroll animations */
+#skills .skill-card,
+#projects .project-card,
+#contact .contact-card,
+#about p,
+#about .section-title,
+#skills .section-title,
+#projects .section-title,
+#contact .section-title {
+  opacity: 0;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+#mobile-menu.open {
+  max-height: 300px;
+}
+
+/* Scrollbar Styling (Light Mode) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Selection */
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+  color: #1f2937;
+}
+
+/* Focus Styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Text Colors */
+.text-primary {
+  color: #1f2937;
+}
+
+.text-secondary {
+  color: #6b7280;
+}
+
+.text-muted {
+  color: #9ca3af;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .glass-section {
+    padding: 20px;
+    margin: 0;
+    border-radius: 16px;
+  }
+
+  .image-placeholder-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .image-placeholder-rounded {
+    width: 100%;
+    max-width: 280px;
+    height: 300px;
+  }
+}
+
+/* Footer Styles */
+.footer-text {
+  color: #6b7280;
+}
+
+/* GSAP Animation Initial States */
+.gsap-hero-title,
+.gsap-hero-desc,
+.gsap-hero-buttons,
+.gsap-hero-image {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 3D Tilt Effect Perspective Container */
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Skill/Project Card Hover Glow */
+.skill-card.gsap-hover,
+.project-card.gsap-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Button Hover Animation Enhancement */
+.btn-primary {
+  transform-origin: center;
+}

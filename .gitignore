@@ -1,0 +1,33 @@
+# OS 생성 파일
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# 에디터/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 로그 파일
+*.log
+npm-debug.log*
+
+# 의존성 (현재는 CDN 사용하지만 향후 대비)
+node_modules/
+
+# 빌드 출력
+dist/
+build/
+
+# 환경 변수
+.env
+.env.local
+.env.*.local
+
+# 캐시
+.cache/
